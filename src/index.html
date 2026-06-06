@@ -16,17 +16,17 @@
 <body>
     <nav class="navbar bg-body-tertiary ">
         <div class="container-fluid justify-content-center">
-            <a class="navbar-brand">Compilador</a>
+            <h2 class="navbar">Compilador</h2>
         </div>
     </nav>
     <div class="container mt-4 border rounded-4 p-4">
-        <div class="row mb-3">
+        <div class="row">
             <div class="col-md-12">
-                <p>Insira uma sentença para compilar e verificar sua sintaxe.</p>
+                <h4 class="mb-1">Sentença</h4>
             </div>
         </div>
         <div class="row mb-3 g-1 ">
-            <div class="col-2">
+            <div class="col-auto align-self-center">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gramaticaModal">Ver gramática</button>
                 <div class="modal fade" id="gramaticaModal" tabindex="-1" aria-labelledby="gramaticaModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-auto me-auto">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tabelaModal">Ver tabela de parsing</button>
                 <div class="modal fade" id="tabelaModal" tabindex="-1" aria-labelledby="tabelaModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
@@ -87,16 +87,41 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-8">
                 <input id="inputCode" class="form-control" placeholder="Insira sua sentença ou gere uma"></input>
             </div>
-            <div class="col-md-1">
+            <div class="col-1">
                 <button id="compileButton" class="btn btn-primary">Gerar</button>
             </div>
         </div>
     </div>
     <div class="container mt-4 border rounded-4 p-4">
-        
+        <div class="row">
+            <div class="col-md-3 border-end">
+                <div class="validate-wrapper">
+                    <div class="validate">
+                        <h4 class="mb-1">Ações</h4>
+                        <div class="row mb-2 justify-content-center">
+                            <div class="col-md-10">
+                                <button id="nextPass" onclick="nextPass()" class="btn btn-primary w-100">Próximo Passo</button>
+                            </div>
+                        </div>
+                        <div class="row mb-2 justify-content-center">
+                            <div class="col-md-10">
+                                <button id="lastPass" onclick="checkEnd()" class="btn btn-primary w-100">Resolver</button>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="table-wrapper container">
+                    <h4 class="mb-1">Resolução</h4>
+                    <table id="resolutionTable" class="table"></table>
+                    <div id="anchor"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
