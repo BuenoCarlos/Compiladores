@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/root.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <nav class="navbar bg-body-tertiary ">
@@ -18,5 +19,84 @@
             <a class="navbar-brand">Compilador</a>
         </div>
     </nav>
+    <div class="container mt-4 border rounded-4 p-4">
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <p>Insira uma sentença para compilar e verificar sua sintaxe.</p>
+            </div>
+        </div>
+        <div class="row mb-3 g-1 ">
+            <div class="col-2">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gramaticaModal">Ver gramática</button>
+                <div class="modal fade" id="gramaticaModal" tabindex="-1" aria-labelledby="gramaticaModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="gramaticaModalLabel">Informações sobre a gramática</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>Gramática:</h6>
+                            <p class="mb-0">S := X | &epsilon;</p>
+                            <p class="mb-0">X := xX | xX</p>
+                            <p class="mb-0">X := xX | x</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tabelaModal">Ver tabela de parsing</button>
+                <div class="modal fade" id="tabelaModal" tabindex="-1" aria-labelledby="tabelaModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="tabelaModalLabel">Tabela de Parsing</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>x</th>
+                                        <th>$</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>S</td>
+                                        <td>S → X</td>
+                                        <td>S → &epsilon;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>X</td>
+                                        <td>X := xX | x</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input id="inputCode" class="form-control" placeholder="Insira sua sentença ou gere uma"></input>
+            </div>
+            <div class="col-md-1">
+                <button id="compileButton" class="btn btn-primary">Gerar</button>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4 border rounded-4 p-4">
+        
+    </div>
 </body>
 </html>
