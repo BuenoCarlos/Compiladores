@@ -44,6 +44,8 @@ C = $
     * Resolver: executa toda a análise automaticamente.
 6. O sistema exibirá o resultado da validação e o histórico completo das ações realizadas.
 
+Ou: https://buenocarlos.github.io/Compiladores/src/index.html
+
 ## Funcionamento
 O analisador utiliza uma pilha para controlar o processo de derivação e uma tabela LL(1) para determinar qual produção deve ser aplicada em cada situação.
 
