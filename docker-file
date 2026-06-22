@@ -1,0 +1,12 @@
+FROM nginx:alpine
+
+# Remove a página padrão do Nginx
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copia todos os arquivos da pasta src para o diretório servido pelo Nginx
+COPY src/ /usr/share/nginx/html/
+
+# Expõe a porta utilizada pelo Nginx
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
